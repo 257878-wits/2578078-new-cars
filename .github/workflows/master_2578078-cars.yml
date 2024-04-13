@@ -1,6 +1,3 @@
-# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
-# More GitHub Actions for Azure: https://github.com/Azure/actions
-
 name: Build and deploy Node.js app to Azure Web App - 2578078-cars
 
 on:
@@ -19,7 +16,7 @@ jobs:
       - name: Set up Node.js version
         uses: actions/setup-node@v3
         with:
-          node-version: '18.x'
+          node-version: '18.x' # Use LTS version
 
       - name: npm install, build, and test
         run: |
@@ -61,5 +58,4 @@ jobs:
         with:
           app-name: '2578078-cars'
           slot-name: 'Production'
-          package: .
-          
+          package: ./node-app # Specify the path to the packaged artifact
